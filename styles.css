@@ -36,22 +36,36 @@ body::after {
 
 body::before {
   background-image:
-    radial-gradient(ellipse at center, rgba(0, 153, 255, 0.92) 0 18%, rgba(0, 153, 255, 0.64) 36%, transparent 72%),
+    radial-gradient(ellipse at center, rgba(0, 153, 255, 0.88) 0 16%, rgba(0, 153, 255, 0.56) 34%, transparent 70%),
+    radial-gradient(ellipse at center, rgba(33, 169, 255, 0.58) 0 18%, rgba(33, 169, 255, 0.34) 38%, transparent 72%),
+    radial-gradient(ellipse at center, rgba(0, 122, 255, 0.42) 0 14%, rgba(0, 122, 255, 0.24) 34%, transparent 70%),
     radial-gradient(ellipse at center, rgba(215, 232, 247, 0.78) 0 24%, transparent 68%);
   background-position:
     -16% 56%,
+    5% 46%,
+    -2% 66%,
     48% 22%;
   background-size:
-    min(900px, 66vw) min(500px, 55vh),
+    min(980px, 72vw) min(540px, 59vh),
+    min(700px, 52vw) min(360px, 41vh),
+    min(620px, 46vw) min(330px, 38vh),
     min(820px, 60vw) min(380px, 40vh);
   animation: blue-cloud 14s ease-in-out infinite;
 }
 
 body::after {
   background-image:
-    radial-gradient(ellipse at center, rgba(120, 226, 216, 0.82) 0 20%, rgba(120, 226, 216, 0.5) 40%, transparent 74%);
-  background-position: 116% 50%;
-  background-size: min(900px, 66vw) min(500px, 55vh);
+    radial-gradient(ellipse at center, rgba(120, 226, 216, 0.78) 0 18%, rgba(120, 226, 216, 0.48) 39%, transparent 73%),
+    radial-gradient(ellipse at center, rgba(143, 239, 223, 0.56) 0 18%, rgba(143, 239, 223, 0.32) 38%, transparent 72%),
+    radial-gradient(ellipse at center, rgba(72, 208, 226, 0.34) 0 14%, rgba(72, 208, 226, 0.2) 34%, transparent 70%);
+  background-position:
+    116% 50%,
+    96% 41%,
+    108% 63%;
+  background-size:
+    min(980px, 72vw) min(540px, 59vh),
+    min(700px, 52vw) min(360px, 41vh),
+    min(580px, 43vw) min(320px, 36vh);
   opacity: 0.55;
   animation: teal-cloud 14s ease-in-out infinite;
 }
@@ -67,29 +81,69 @@ body::after {
   0% {
     background-position:
       -16% 56%,
+      5% 46%,
+      -2% 66%,
       48% 22%;
     background-size:
-      min(940px, 68vw) min(515px, 57vh),
+      min(1020px, 74vw) min(560px, 61vh),
+      min(720px, 53vw) min(380px, 43vh),
+      min(610px, 45vw) min(320px, 37vh),
       min(820px, 60vw) min(380px, 40vh);
     opacity: 1;
+  }
+
+  28% {
+    background-position:
+      44% 49%,
+      32% 59%,
+      54% 41%,
+      52% 24%;
+    background-size:
+      min(1080px, 78vw) min(585px, 64vh),
+      min(680px, 50vw) min(350px, 40vh),
+      min(690px, 50vw) min(360px, 41vh),
+      min(860px, 63vw) min(395px, 42vh);
+    opacity: 0.74;
   }
 
   50% {
     background-position:
       116% 53%,
+      92% 43%,
+      105% 63%,
       58% 25%;
     background-size:
-      min(760px, 56vw) min(420px, 47vh),
+      min(820px, 60vw) min(455px, 50vh),
+      min(610px, 45vw) min(320px, 37vh),
+      min(560px, 42vw) min(300px, 35vh),
       min(900px, 66vw) min(415px, 44vh);
     opacity: 0.44;
+  }
+
+  72% {
+    background-position:
+      38% 61%,
+      54% 46%,
+      30% 52%,
+      46% 23%;
+    background-size:
+      min(990px, 72vw) min(535px, 58vh),
+      min(740px, 54vw) min(390px, 44vh),
+      min(620px, 46vw) min(330px, 38vh),
+      min(840px, 62vw) min(388px, 41vh);
+    opacity: 0.76;
   }
 
   100% {
     background-position:
       -16% 56%,
+      5% 46%,
+      -2% 66%,
       48% 22%;
     background-size:
-      min(940px, 68vw) min(515px, 57vh),
+      min(1020px, 74vw) min(560px, 61vh),
+      min(720px, 53vw) min(380px, 43vh),
+      min(610px, 45vw) min(320px, 37vh),
       min(820px, 60vw) min(380px, 40vh);
     opacity: 1;
   }
@@ -97,20 +151,62 @@ body::after {
 
 @keyframes teal-cloud {
   0% {
-    background-position: -16% 52%;
-    background-size: min(720px, 53vw) min(400px, 45vh);
+    background-position:
+      -16% 52%,
+      3% 61%,
+      -4% 43%;
+    background-size:
+      min(760px, 56vw) min(420px, 47vh),
+      min(560px, 42vw) min(300px, 35vh),
+      min(500px, 38vw) min(280px, 32vh);
     opacity: 0.34;
   }
 
+  28% {
+    background-position:
+      52% 57%,
+      36% 44%,
+      62% 66%;
+    background-size:
+      min(900px, 66vw) min(500px, 55vh),
+      min(680px, 50vw) min(350px, 40vh),
+      min(540px, 40vw) min(300px, 35vh);
+    opacity: 0.68;
+  }
+
   50% {
-    background-position: 116% 51%;
-    background-size: min(980px, 72vw) min(540px, 59vh);
+    background-position:
+      116% 51%,
+      96% 39%,
+      108% 64%;
+    background-size:
+      min(1060px, 77vw) min(585px, 64vh),
+      min(760px, 56vw) min(390px, 44vh),
+      min(620px, 46vw) min(330px, 38vh);
     opacity: 0.96;
   }
 
+  72% {
+    background-position:
+      58% 45%,
+      72% 58%,
+      42% 63%;
+    background-size:
+      min(940px, 68vw) min(510px, 56vh),
+      min(640px, 47vw) min(340px, 39vh),
+      min(580px, 43vw) min(310px, 36vh);
+    opacity: 0.72;
+  }
+
   100% {
-    background-position: -16% 52%;
-    background-size: min(720px, 53vw) min(400px, 45vh);
+    background-position:
+      -16% 52%,
+      3% 61%,
+      -4% 43%;
+    background-size:
+      min(760px, 56vw) min(420px, 47vh),
+      min(560px, 42vw) min(300px, 35vh),
+      min(500px, 38vw) min(280px, 32vh);
     opacity: 0.34;
   }
 }
