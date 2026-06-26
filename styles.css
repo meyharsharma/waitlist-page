@@ -223,7 +223,10 @@ body::after {
   top: 0;
   left: 30px;
   z-index: 2;
-  color: #78e2d8;
+  color: transparent;
+  background: linear-gradient(90deg, #80dfea 0%, #8ee8ca 52%, #a8ff87 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.55rem, 2.9vw, 2.35rem);
   font-weight: 700;
