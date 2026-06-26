@@ -1,0 +1,197 @@
+:root {
+  --ink: #171326;
+  --headline: #28205f;
+  --blue: #2f78ed;
+  --blue-deep: #1d63dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+  background:
+    radial-gradient(circle at 33% 61%, rgba(0, 153, 255, 0.9) 0 13%, rgba(0, 153, 255, 0.62) 25%, transparent 48%),
+    radial-gradient(circle at 70% 58%, rgba(120, 226, 216, 0.66) 0 18%, rgba(120, 226, 216, 0.35) 30%, transparent 50%),
+    radial-gradient(circle at 50% 40%, rgba(226, 235, 244, 0.92) 0 26%, transparent 57%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 44%, #ffffff 100%);
+  overflow-x: hidden;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 28px 30px 18px;
+}
+
+.brand {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  z-index: 2;
+  color: #060606;
+  font-size: clamp(2rem, 3.9vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.28);
+}
+
+.hero {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  min-height: calc(100vh - 46px);
+  padding-top: 13px;
+  text-align: center;
+}
+
+.hero-copy {
+  width: min(890px, 100%);
+}
+
+h1 {
+  max-width: 890px;
+  margin: 0 auto;
+  color: var(--headline);
+  font-family: Nunito, Arial, sans-serif;
+  font-size: clamp(2.45rem, 4.1vw, 4.05rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-wrap: balance;
+  text-shadow:
+    0 4px 0 rgba(26, 18, 74, 0.18),
+    0 5px 8px rgba(13, 10, 46, 0.22);
+}
+
+.subhead {
+  max-width: 760px;
+  margin: 14px auto 0;
+  font-size: clamp(1rem, 1.65vw, 1.45rem);
+  line-height: 1.18;
+  text-align: left;
+}
+
+.waitlist-note {
+  margin: 34px auto 9px;
+  font-size: clamp(1rem, 1.55vw, 1.34rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.waitlist-form {
+  display: flex;
+  justify-content: center;
+  width: min(314px, 100%);
+  height: 51px;
+  margin: 0 auto 21px;
+}
+
+.waitlist-form input,
+.waitlist-form button {
+  min-width: 0;
+  border-radius: 0;
+  font: inherit;
+}
+
+.waitlist-form input {
+  width: 67%;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--ink);
+  padding: 0 14px;
+  outline: 0;
+  box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.03);
+}
+
+.waitlist-form input:focus {
+  border-color: rgba(47, 120, 237, 0.7);
+  box-shadow: 0 0 0 3px rgba(47, 120, 237, 0.18);
+}
+
+.waitlist-form button {
+  width: 33%;
+  border: 0;
+  background: var(--blue);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.waitlist-form button:hover {
+  background: var(--blue-deep);
+}
+
+.waitlist-form button:active {
+  transform: translateY(1px);
+}
+
+.laptop-wrap {
+  width: min(582px, 62vw);
+  margin-top: 12px;
+}
+
+.laptop-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 10px rgba(9, 20, 34, 0.1));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    padding: 70px 22px 22px;
+  }
+
+  .brand {
+    left: 22px;
+    top: 10px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .subhead {
+    text-align: center;
+  }
+
+  .waitlist-note {
+    margin-top: 26px;
+  }
+
+  .waitlist-form {
+    width: min(360px, 100%);
+  }
+
+  .laptop-wrap {
+    width: min(620px, 112vw);
+    margin-top: 18px;
+  }
+}
