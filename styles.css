@@ -62,14 +62,14 @@ body {
 
   50% {
     background-position:
-      34% 52%,
-      55% 50%,
-      55% 25%,
+      42% 52%,
+      48% 50%,
+      58% 25%,
       0 0;
     background-size:
-      min(960px, 70vw) min(520px, 57vh),
-      min(720px, 53vw) min(420px, 47vh),
-      min(880px, 64vw) min(405px, 43vh),
+      min(990px, 72vw) min(535px, 58vh),
+      min(700px, 52vw) min(410px, 46vh),
+      min(900px, 66vw) min(415px, 44vh),
       100% 100%;
   }
 
@@ -158,23 +158,33 @@ h1 {
   justify-content: center;
   width: 104px;
   height: 51px;
-  margin: 0 auto 4px;
-  border: 0;
-  border-radius: 0;
-  background: var(--blue);
+  margin: 10px auto 4px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 13px;
+  background:
+    linear-gradient(145deg, rgba(71, 141, 245, 0.9), rgba(32, 99, 222, 0.88)),
+    rgba(47, 120, 237, 0.82);
   color: #ffffff;
   cursor: pointer;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
   line-height: 1.1;
   padding: 0 10px;
+  box-shadow:
+    0 12px 32px rgba(47, 120, 237, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px) saturate(1.2);
   transition:
-    background 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
     transform 150ms ease;
 }
 
 .signup-trigger:hover {
-  background: var(--blue-deep);
+  border-color: rgba(255, 255, 255, 0.64);
+  box-shadow:
+    0 14px 36px rgba(47, 120, 237, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
 }
 
 .signup-trigger:active {
