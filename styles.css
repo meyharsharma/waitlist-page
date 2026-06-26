@@ -223,13 +223,13 @@ body::after {
   top: 0;
   left: 30px;
   z-index: 2;
-  color: #060606;
+  color: #78e2d8;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.55rem, 2.9vw, 2.35rem);
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 4px 5px rgba(0, 71, 171, 0.22);
 }
 
 .hero {
