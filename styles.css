@@ -36,9 +36,9 @@ body::after {
 
 body::before {
   background-image:
-    radial-gradient(ellipse at center, rgba(0, 153, 255, 0.88) 0 16%, rgba(0, 153, 255, 0.56) 34%, transparent 70%),
-    radial-gradient(ellipse at center, rgba(33, 169, 255, 0.58) 0 18%, rgba(33, 169, 255, 0.34) 38%, transparent 72%),
-    radial-gradient(ellipse at center, rgba(0, 122, 255, 0.42) 0 14%, rgba(0, 122, 255, 0.24) 34%, transparent 70%),
+    radial-gradient(ellipse at center, rgba(0, 153, 255, 0.86) 0 14%, rgba(0, 153, 255, 0.54) 32%, transparent 68%),
+    radial-gradient(ellipse at center, rgba(33, 169, 255, 0.62) 0 15%, rgba(33, 169, 255, 0.36) 34%, transparent 68%),
+    radial-gradient(ellipse at center, rgba(0, 122, 255, 0.48) 0 12%, rgba(0, 122, 255, 0.26) 30%, transparent 66%),
     radial-gradient(ellipse at center, rgba(215, 232, 247, 0.78) 0 24%, transparent 68%);
   background-position:
     -16% 56%,
@@ -55,9 +55,9 @@ body::before {
 
 body::after {
   background-image:
-    radial-gradient(ellipse at center, rgba(120, 226, 216, 0.78) 0 18%, rgba(120, 226, 216, 0.48) 39%, transparent 73%),
-    radial-gradient(ellipse at center, rgba(143, 239, 223, 0.56) 0 18%, rgba(143, 239, 223, 0.32) 38%, transparent 72%),
-    radial-gradient(ellipse at center, rgba(72, 208, 226, 0.34) 0 14%, rgba(72, 208, 226, 0.2) 34%, transparent 70%);
+    radial-gradient(ellipse at center, rgba(120, 226, 216, 0.76) 0 16%, rgba(120, 226, 216, 0.46) 36%, transparent 70%),
+    radial-gradient(ellipse at center, rgba(143, 239, 223, 0.6) 0 15%, rgba(143, 239, 223, 0.34) 34%, transparent 68%),
+    radial-gradient(ellipse at center, rgba(72, 208, 226, 0.4) 0 12%, rgba(72, 208, 226, 0.22) 30%, transparent 66%);
   background-position:
     116% 50%,
     96% 41%,
@@ -94,14 +94,14 @@ body::after {
 
   28% {
     background-position:
-      44% 49%,
-      32% 59%,
-      54% 41%,
+      40% 43%,
+      23% 64%,
+      61% 36%,
       52% 24%;
     background-size:
-      min(1080px, 78vw) min(585px, 64vh),
-      min(680px, 50vw) min(350px, 40vh),
-      min(690px, 50vw) min(360px, 41vh),
+      min(1140px, 82vw) min(520px, 57vh),
+      min(520px, 39vw) min(460px, 51vh),
+      min(780px, 57vw) min(250px, 30vh),
       min(860px, 63vw) min(395px, 42vh);
     opacity: 0.74;
   }
@@ -122,14 +122,14 @@ body::after {
 
   72% {
     background-position:
-      38% 61%,
-      54% 46%,
-      30% 52%,
+      33% 66%,
+      63% 39%,
+      22% 48%,
       46% 23%;
     background-size:
-      min(990px, 72vw) min(535px, 58vh),
-      min(740px, 54vw) min(390px, 44vh),
-      min(620px, 46vw) min(330px, 38vh),
+      min(900px, 66vw) min(610px, 66vh),
+      min(820px, 60vw) min(260px, 31vh),
+      min(480px, 36vw) min(430px, 48vh),
       min(840px, 62vw) min(388px, 41vh);
     opacity: 0.76;
   }
@@ -164,13 +164,13 @@ body::after {
 
   28% {
     background-position:
-      52% 57%,
-      36% 44%,
-      62% 66%;
+      48% 63%,
+      28% 39%,
+      70% 59%;
     background-size:
-      min(900px, 66vw) min(500px, 55vh),
-      min(680px, 50vw) min(350px, 40vh),
-      min(540px, 40vw) min(300px, 35vh);
+      min(980px, 72vw) min(455px, 50vh),
+      min(500px, 38vw) min(460px, 51vh),
+      min(660px, 49vw) min(240px, 29vh);
     opacity: 0.68;
   }
 
@@ -188,13 +188,13 @@ body::after {
 
   72% {
     background-position:
-      58% 45%,
-      72% 58%,
-      42% 63%;
+      62% 38%,
+      78% 64%,
+      34% 57%;
     background-size:
-      min(940px, 68vw) min(510px, 56vh),
-      min(640px, 47vw) min(340px, 39vh),
-      min(580px, 43vw) min(310px, 36vh);
+      min(820px, 60vw) min(590px, 64vh),
+      min(760px, 56vw) min(270px, 32vh),
+      min(430px, 33vw) min(420px, 47vh);
     opacity: 0.72;
   }
 
