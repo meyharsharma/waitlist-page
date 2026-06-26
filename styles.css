@@ -94,14 +94,14 @@ body::after {
 
   28% {
     background-position:
-      40% 43%,
-      23% 64%,
-      61% 36%,
+      36% 39%,
+      18% 69%,
+      68% 31%,
       52% 24%;
     background-size:
-      min(1140px, 82vw) min(520px, 57vh),
-      min(520px, 39vw) min(460px, 51vh),
-      min(780px, 57vw) min(250px, 30vh),
+      min(1280px, 92vw) min(430px, 48vh),
+      min(390px, 30vw) min(620px, 68vh),
+      min(920px, 66vw) min(190px, 24vh),
       min(860px, 63vw) min(395px, 42vh);
     opacity: 0.74;
   }
@@ -122,14 +122,14 @@ body::after {
 
   72% {
     background-position:
-      33% 66%,
-      63% 39%,
-      22% 48%,
+      28% 72%,
+      70% 34%,
+      16% 43%,
       46% 23%;
     background-size:
-      min(900px, 66vw) min(610px, 66vh),
-      min(820px, 60vw) min(260px, 31vh),
-      min(480px, 36vw) min(430px, 48vh),
+      min(720px, 54vw) min(700px, 76vh),
+      min(1020px, 74vw) min(190px, 24vh),
+      min(330px, 26vw) min(560px, 62vh),
       min(840px, 62vw) min(388px, 41vh);
     opacity: 0.76;
   }
@@ -164,13 +164,13 @@ body::after {
 
   28% {
     background-position:
-      48% 63%,
-      28% 39%,
-      70% 59%;
+      44% 69%,
+      20% 34%,
+      78% 54%;
     background-size:
-      min(980px, 72vw) min(455px, 50vh),
-      min(500px, 38vw) min(460px, 51vh),
-      min(660px, 49vw) min(240px, 29vh);
+      min(1140px, 82vw) min(360px, 41vh),
+      min(360px, 28vw) min(610px, 67vh),
+      min(780px, 57vw) min(190px, 24vh);
     opacity: 0.68;
   }
 
@@ -188,13 +188,13 @@ body::after {
 
   72% {
     background-position:
-      62% 38%,
-      78% 64%,
-      34% 57%;
+      68% 32%,
+      86% 70%,
+      26% 52%;
     background-size:
-      min(820px, 60vw) min(590px, 64vh),
-      min(760px, 56vw) min(270px, 32vh),
-      min(430px, 33vw) min(420px, 47vh);
+      min(650px, 49vw) min(690px, 75vh),
+      min(940px, 68vw) min(200px, 25vh),
+      min(310px, 25vw) min(560px, 62vh);
     opacity: 0.72;
   }
 
