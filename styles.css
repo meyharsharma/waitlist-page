@@ -257,8 +257,8 @@ h1 {
   letter-spacing: 0;
   text-wrap: balance;
   text-shadow:
-    0 4px 0 rgba(26, 18, 74, 0.18),
-    0 5px 8px rgba(13, 10, 46, 0.22);
+    0 2px 0 rgba(0, 71, 171, 0.1),
+    0 4px 8px rgba(13, 10, 46, 0.14);
 }
 
 .subhead {
