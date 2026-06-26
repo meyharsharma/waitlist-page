@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--ink);
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   background:
     radial-gradient(circle at 33% 61%, rgba(0, 153, 255, 0.9) 0 13%, rgba(0, 153, 255, 0.62) 25%, transparent 48%),
     radial-gradient(circle at 70% 58%, rgba(120, 226, 216, 0.66) 0 18%, rgba(120, 226, 216, 0.35) 30%, transparent 50%),
@@ -62,7 +62,7 @@ h1 {
   max-width: 890px;
   margin: 0 auto;
   color: var(--headline);
-  font-family: Nunito, Arial, sans-serif;
+  font-family: "Arial Black", Impact, system-ui, sans-serif;
   font-size: clamp(2.45rem, 4.1vw, 4.05rem);
   font-weight: 900;
   line-height: 0.98;
