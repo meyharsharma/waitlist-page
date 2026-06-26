@@ -26,28 +26,33 @@ body {
 body::before,
 body::after {
   position: fixed;
-  inset: -18vh -12vw;
+  top: 18vh;
+  left: 50%;
   z-index: -1;
+  width: min(980px, 90vw);
+  height: min(500px, 58vh);
   content: "";
+  mask-image: radial-gradient(ellipse at 50% 58%, #000 0 45%, transparent 76%);
   pointer-events: none;
+  transform: translateX(-50%);
   will-change: transform;
 }
 
 body::before {
   background:
-    radial-gradient(circle at 33% 61%, rgba(0, 153, 255, 0.9) 0 13%, rgba(0, 153, 255, 0.62) 25%, transparent 48%),
-    radial-gradient(circle at 70% 58%, rgba(120, 226, 216, 0.66) 0 18%, rgba(120, 226, 216, 0.35) 30%, transparent 50%),
-    radial-gradient(circle at 50% 40%, rgba(226, 235, 244, 0.92) 0 26%, transparent 57%);
-  animation: cloud-drift 24s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 28% 68%, rgba(0, 153, 255, 0.86) 0 16%, rgba(0, 153, 255, 0.58) 29%, transparent 54%),
+    radial-gradient(ellipse at 72% 54%, rgba(120, 226, 216, 0.64) 0 18%, rgba(120, 226, 216, 0.34) 32%, transparent 56%),
+    radial-gradient(ellipse at 50% 32%, rgba(226, 235, 244, 0.88) 0 23%, transparent 52%);
+  animation: cloud-drift 16s ease-in-out infinite alternate;
 }
 
 body::after {
   background:
-    radial-gradient(circle at 28% 68%, rgba(32, 143, 245, 0.35) 0 14%, transparent 38%),
-    radial-gradient(circle at 74% 48%, rgba(176, 239, 229, 0.5) 0 16%, transparent 42%);
-  filter: blur(18px);
-  opacity: 0.72;
-  animation: cloud-breathe 32s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 24% 72%, rgba(32, 143, 245, 0.38) 0 17%, transparent 42%),
+    radial-gradient(ellipse at 76% 48%, rgba(176, 239, 229, 0.54) 0 18%, transparent 44%);
+  filter: blur(14px);
+  opacity: 0.76;
+  animation: cloud-breathe 20s ease-in-out infinite alternate;
 }
 
 .page-shell {
@@ -59,25 +64,25 @@ body::after {
 
 @keyframes cloud-drift {
   0% {
-    transform: translate3d(-1.5vw, 1vh, 0) scale(1);
+    transform: translate3d(calc(-50% - 28px), 16px, 0) scale(1);
   }
 
   50% {
-    transform: translate3d(1.2vw, -1.4vh, 0) scale(1.025);
+    transform: translate3d(calc(-50% + 34px), -20px, 0) scale(1.035);
   }
 
   100% {
-    transform: translate3d(2vw, 0.8vh, 0) scale(1.015);
+    transform: translate3d(calc(-50% + 46px), 12px, 0) scale(1.015);
   }
 }
 
 @keyframes cloud-breathe {
   0% {
-    transform: translate3d(1vw, -0.8vh, 0) scale(1.02);
+    transform: translate3d(calc(-50% + 30px), -14px, 0) scale(1.02);
   }
 
   100% {
-    transform: translate3d(-1.6vw, 1.5vh, 0) scale(1.06);
+    transform: translate3d(calc(-50% - 42px), 26px, 0) scale(1.08);
   }
 }
 
