@@ -472,7 +472,7 @@ h1 {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(360px, 1fr);
   min-height: 100vh;
-  margin-top: 54px;
+  margin-top: 0;
   overflow: hidden;
   background:
     radial-gradient(circle at 8% 12%, rgba(128, 223, 234, 0.08), transparent 24%),
@@ -481,8 +481,25 @@ h1 {
   border-radius: 0 0 0 36px;
 }
 
+.services-section::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 0;
+  height: 170px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 252, 255, 0.72) 30%,
+    rgba(37, 40, 43, 0) 100%
+  );
+}
+
 .services-intro,
 .services-list {
+  position: relative;
+  z-index: 1;
   padding: clamp(34px, 4vw, 56px);
 }
 
