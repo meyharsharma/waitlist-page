@@ -49,6 +49,7 @@ body {
   display: grid;
   justify-items: center;
   align-content: start;
+  width: 100%;
   min-height: calc(100vh - 46px);
   padding-top: 13px;
   text-align: center;
@@ -59,13 +60,13 @@ body {
 }
 
 h1 {
-  max-width: 890px;
+  max-width: 920px;
   margin: 0 auto;
   color: var(--headline);
-  font-family: "Arial Black", Impact, system-ui, sans-serif;
-  font-size: clamp(2.45rem, 4.1vw, 4.05rem);
-  font-weight: 900;
-  line-height: 0.98;
+  font-family: "Cooper Black", Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 3.45vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 0;
   text-wrap: balance;
   text-shadow:
@@ -75,14 +76,14 @@ h1 {
 
 .subhead {
   max-width: 760px;
-  margin: 14px auto 0;
+  margin: 10px auto 0;
   font-size: clamp(1rem, 1.65vw, 1.45rem);
   line-height: 1.18;
   text-align: left;
 }
 
 .waitlist-note {
-  margin: 34px auto 9px;
+  margin: 30px auto 8px;
   font-size: clamp(1rem, 1.55vw, 1.34rem);
   line-height: 1.35;
   text-wrap: balance;
@@ -93,7 +94,7 @@ h1 {
   justify-content: center;
   width: min(314px, 100%);
   height: 51px;
-  margin: 0 auto 21px;
+  margin: 0 auto 16px;
 }
 
 .waitlist-form input,
@@ -140,8 +141,8 @@ h1 {
 }
 
 .laptop-wrap {
-  width: min(582px, 62vw);
-  margin-top: 12px;
+  width: min(560px, 62vw);
+  margin-top: 18px;
 }
 
 .laptop-wrap img {
@@ -178,6 +179,19 @@ h1 {
     padding-top: 0;
   }
 
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    line-height: 1.08;
+  }
+
   .subhead {
     text-align: center;
   }
@@ -191,7 +205,7 @@ h1 {
   }
 
   .laptop-wrap {
-    width: min(620px, 112vw);
+    width: min(620px, 100%);
     margin-top: 18px;
   }
 }
