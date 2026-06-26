@@ -153,9 +153,10 @@ h1 {
 }
 
 .signup-trigger {
-  display: grid;
-  place-items: center;
-  width: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
   height: 51px;
   margin: 0 auto 4px;
   border: 0;
@@ -165,8 +166,8 @@ h1 {
   cursor: pointer;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
-  line-height: 1;
-  padding: 0 2px 2px;
+  line-height: 1.1;
+  padding: 0 10px;
   transition:
     background 150ms ease,
     transform 150ms ease;
@@ -286,7 +287,7 @@ h1 {
   }
 
   .signup-trigger {
-    width: 128px;
+    width: 104px;
   }
 
   .laptop-wrap {
