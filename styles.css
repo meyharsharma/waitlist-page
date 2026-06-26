@@ -77,7 +77,7 @@ h1 {
 
 .subhead {
   max-width: 760px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   font-size: clamp(1rem, 1.65vw, 1.45rem);
   line-height: 1.18;
   text-align: left;
