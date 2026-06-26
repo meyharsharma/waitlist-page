@@ -514,10 +514,11 @@ h1 {
   background: linear-gradient(90deg, #80dfea 0%, #8ee8ca 52%, #a8ff87 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: clamp(4.8rem, 8vw, 7.6rem);
-  font-weight: 400;
+  font-family: Satoshi, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 45px;
+  font-weight: 900;
   letter-spacing: 0;
-  line-height: 0.92;
+  line-height: 1.02;
 }
 
 .services-intro p {
@@ -530,7 +531,7 @@ h1 {
 
 .services-arrow {
   position: relative;
-  width: 120px;
+  width: 128px;
   height: 96px;
   margin-top: 42px;
 }
@@ -540,22 +541,22 @@ h1 {
   position: absolute;
   content: "";
   background: rgba(255, 255, 255, 0.82);
-  transform-origin: right bottom;
+  transform-origin: right center;
 }
 
 .services-arrow::before {
   right: 0;
   bottom: 0;
-  width: 118px;
-  height: 2px;
+  width: 126px;
+  height: 3px;
 }
 
 .services-arrow::after {
   right: 0;
-  bottom: 0;
-  width: 2px;
-  height: 118px;
-  transform: rotate(-45deg);
+  bottom: 1px;
+  width: 126px;
+  height: 3px;
+  transform: rotate(45deg);
 }
 
 .services-list {
