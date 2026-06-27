@@ -478,8 +478,8 @@ h1 {
   margin-top: 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 8% 12%, rgba(128, 223, 234, 0.08), transparent 24%),
-    linear-gradient(135deg, #25282b 0%, #202326 100%);
+    radial-gradient(circle at 8% 12%, rgba(128, 223, 234, 0.1), transparent 26%),
+    linear-gradient(135deg, #45494c 0%, #383d40 100%);
   color: rgba(255, 255, 255, 0.92);
   border-radius: 0 0 0 36px;
 }
@@ -488,14 +488,15 @@ h1 {
   position: absolute;
   inset: 0 0 auto;
   z-index: 0;
-  height: 170px;
+  height: 210px;
   content: "";
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 252, 255, 0.72) 30%,
-    rgba(37, 40, 43, 0) 100%
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(246, 249, 250, 0.82) 24%,
+    rgba(212, 217, 219, 0.54) 58%,
+    rgba(69, 73, 76, 0) 100%
   );
 }
 
@@ -512,7 +513,7 @@ h1 {
 
 .services-intro::after {
   position: absolute;
-  top: 170px;
+  top: 210px;
   right: 0;
   bottom: 0;
   width: 1px;
