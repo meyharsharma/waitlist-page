@@ -482,10 +482,10 @@ h1 {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    #ffffff 5%,
-    #f8fbfc 10%,
-    #dfe4e6 15%,
-    #45494c 48%,
+    #ffffff 3%,
+    #f8fbfc 5.5%,
+    #dfe4e6 8%,
+    #45494c 44%,
     #383d40 100%
   );
   color: rgba(255, 255, 255, 0.92);
