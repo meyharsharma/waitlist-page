@@ -477,15 +477,15 @@ h1 {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(360px, 1fr);
   min-height: 100vh;
-  margin-top: 0;
+  margin-top: -64px;
   overflow: hidden;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
     #ffffff 3%,
-    #f8fbfc 5%,
-    #dfe4e6 7%,
-    #45494c 12%,
+    #f8fbfc 6%,
+    #dfe4e6 10%,
+    #45494c 17%,
     #383d40 100%
   );
   color: rgba(255, 255, 255, 0.92);
@@ -500,7 +500,7 @@ h1 {
 .services-list {
   position: relative;
   z-index: 1;
-  padding: calc(180px + clamp(34px, 4vw, 56px)) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
+  padding: calc(140px + clamp(34px, 4vw, 56px)) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
 }
 
 .services-intro {
@@ -509,7 +509,7 @@ h1 {
 
 .services-intro::after {
   position: absolute;
-  top: 270px;
+  top: 230px;
   right: 0;
   bottom: 0;
   width: 1px;
@@ -642,7 +642,7 @@ h1 {
 
   .services-section {
     grid-template-columns: 1fr;
-    margin-top: 36px;
+    margin-top: -24px;
     border-radius: 0 0 0 24px;
   }
 
@@ -653,7 +653,7 @@ h1 {
 
   .services-intro,
   .services-list {
-    padding: 184px 24px 32px;
+    padding: 144px 24px 32px;
   }
 
   .services-list {
