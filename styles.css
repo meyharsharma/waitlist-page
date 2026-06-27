@@ -88,7 +88,21 @@ body::after {
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding: 28px 30px 18px;
+  padding: 28px 30px 0;
+}
+
+.page-shell::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  height: min(330px, 34vh);
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(120, 226, 216, 0.28) 0%, rgba(120, 226, 216, 0.17) 36%, transparent 72%),
+    radial-gradient(ellipse at 44% 92%, rgba(0, 153, 255, 0.2) 0%, rgba(0, 153, 255, 0.1) 42%, transparent 74%);
 }
 
 @keyframes blue-cloud {
@@ -250,6 +264,8 @@ body::after {
 }
 
 .hero {
+  position: relative;
+  z-index: 1;
   display: grid;
   justify-items: center;
   align-content: start;
@@ -485,15 +501,18 @@ h1 {
   position: absolute;
   inset: 0 0 auto;
   z-index: 0;
-  height: 170px;
+  height: 230px;
   content: "";
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(248, 252, 255, 0.72) 30%,
-    rgba(37, 40, 43, 0) 100%
-  );
+  background:
+    radial-gradient(ellipse at 48% -14%, rgba(120, 226, 216, 0.34) 0%, rgba(120, 226, 216, 0.16) 42%, transparent 72%),
+    linear-gradient(
+      180deg,
+      rgba(238, 244, 247, 0.74) 0%,
+      rgba(160, 169, 171, 0.58) 34%,
+      rgba(77, 83, 86, 0.42) 66%,
+      rgba(37, 40, 43, 0) 100%
+    );
 }
 
 .services-intro,
