@@ -84,15 +84,6 @@ a {
   text-decoration: none;
 }
 
-.brand::before {
-  display: block;
-  width: 110px;
-  height: 3px;
-  margin-bottom: -3px;
-  content: "";
-  background: var(--ink);
-}
-
 .nav-pill {
   display: flex;
   align-items: center;
@@ -157,7 +148,7 @@ h1 {
   max-width: 1380px;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(3.7rem, 4.8vw, 6rem);
+  font-size: clamp(3rem, calc(4.8vw - 30px), 4.125rem);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: 0;
@@ -215,7 +206,7 @@ h1 {
   position: relative;
   width: 220px;
   height: 128px;
-  margin-bottom: 40px;
+  margin-bottom: 128px;
 }
 
 .signal-mark span {
@@ -518,10 +509,6 @@ h1 {
     align-items: center;
     justify-content: space-between;
     gap: 14px;
-  }
-
-  .brand::before {
-    width: 82px;
   }
 
   .nav-pill {
