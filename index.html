@@ -97,7 +97,7 @@
         aria-modal="true"
         aria-label="Join the Rivvo waitlist"
       >
-        <form class="signup-form">
+        <form class="signup-form" novalidate>
           <label class="sr-only" for="signup-name">Name</label>
           <input
             id="signup-name"
@@ -105,6 +105,7 @@
             type="text"
             autocomplete="name"
             placeholder="Name"
+            required
           />
           <label class="sr-only" for="signup-email">Email</label>
           <input
@@ -113,7 +114,9 @@
             type="email"
             autocomplete="email"
             placeholder="Email"
+            required
           />
+          <p class="signup-message" data-signup-message aria-live="polite"></p>
           <button class="signup-submit" type="submit">Submit</button>
         </form>
       </div>
