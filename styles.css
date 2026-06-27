@@ -432,14 +432,14 @@ h1 {
   display: block;
   margin-bottom: 18px;
   color: var(--teal);
-  font-size: clamp(calc(1rem + 7px), calc(1.2vw + 7px), calc(1.2rem + 7px));
+  font-size: clamp(calc(1rem + 12px), calc(1.2vw + 12px), calc(1.2rem + 12px));
   font-weight: 800;
 }
 
 .service-item h3 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(1.35rem, 2vw, 2.1rem);
+  font-size: clamp(calc(1.35rem + 5px), calc(2vw + 5px), calc(2.1rem + 5px));
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: 0;
@@ -449,7 +449,7 @@ h1 {
   max-width: 640px;
   margin: 14px 0 0;
   color: rgba(255, 255, 255, 0.68);
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-size: clamp(calc(1rem + 5px), calc(1.25vw + 5px), calc(1.2rem + 5px));
   line-height: 1.5;
 }
 
