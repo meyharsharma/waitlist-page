@@ -173,9 +173,9 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 260px;
-  min-height: 64px;
-  margin-top: clamp(80px, 12vh, 150px);
+  min-width: 208px;
+  min-height: 56px;
+  margin-top: clamp(52px, 8vh, 104px);
   border: 2px solid var(--ink);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.26);
@@ -536,9 +536,9 @@ h1 {
   }
 
   .learn-more-link {
-    min-width: 190px;
-    min-height: 54px;
-    margin-top: 54px;
+    min-width: 170px;
+    min-height: 50px;
+    margin-top: 42px;
   }
 
   .signal-mark {
