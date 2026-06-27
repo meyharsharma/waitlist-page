@@ -63,7 +63,7 @@ const createServer = () => http.createServer((request, response) => {
 
 if (require.main === module) {
   createServer().listen(port, () => {
-    console.log(`Rivvo waitlist running at http://localhost:${port}`);
+    console.log(`MarketDesk waitlist running at http://localhost:${port}`);
   });
 }
 
