@@ -150,7 +150,7 @@ h1 {
   color: var(--ink);
   font-size: clamp(3.625rem, calc(4.8vw - 20px), 4.75rem);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 1.04;
   letter-spacing: 0;
   text-wrap: balance;
 }
