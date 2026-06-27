@@ -505,7 +505,21 @@ h1 {
 
 .services-intro {
   position: relative;
-  border-right: 1px solid rgba(128, 223, 234, 0.86);
+}
+
+.services-intro::after {
+  position: absolute;
+  top: 170px;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(128, 223, 234, 0),
+    rgba(128, 223, 234, 0.86) 72px
+  );
+  pointer-events: none;
 }
 
 .services-intro h2 {
