@@ -485,15 +485,15 @@ h1 {
     linear-gradient(
       180deg,
       #ffffff 0,
-      rgba(255, 255, 255, 0.82) 34px,
-      rgba(255, 255, 255, 0.38) 92px,
+      rgba(255, 255, 255, 0.9) 34px,
+      rgba(255, 255, 255, 0.56) 92px,
       rgba(255, 255, 255, 0) var(--services-content-offset)
     ),
     linear-gradient(
       90deg,
-      #4f8fe8 0%,
-      #5eb8f0 38%,
-      #78e2d8 100%
+      #b9d6fb 0%,
+      #bcecf8 42%,
+      #c5f4ee 100%
     );
   color: #143755;
   border-radius: 0 0 0 36px;
