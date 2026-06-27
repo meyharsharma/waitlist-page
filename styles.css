@@ -53,6 +53,8 @@ body {
   content: "";
   pointer-events: none;
   background-repeat: no-repeat;
+  mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.64) 78%, transparent 98%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, 0.64) 78%, transparent 98%);
   will-change: background-position, background-size, opacity;
 }
 
@@ -477,27 +479,22 @@ h1 {
   min-height: 100vh;
   margin-top: 0;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 8% 12%, rgba(128, 223, 234, 0.1), transparent 26%),
-    linear-gradient(135deg, #45494c 0%, #383d40 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0,
+    #ffffff 76px,
+    #f8fbfc 150px,
+    #dfe4e6 238px,
+    #91989b 330px,
+    #45494c 450px,
+    #383d40 100%
+  );
   color: rgba(255, 255, 255, 0.92);
   border-radius: 0 0 0 36px;
 }
 
 .services-section::before {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: 0;
-  height: 210px;
-  content: "";
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(246, 249, 250, 0.82) 24%,
-    rgba(212, 217, 219, 0.54) 58%,
-    rgba(69, 73, 76, 0) 100%
-  );
+  content: none;
 }
 
 .services-intro,
@@ -513,7 +510,7 @@ h1 {
 
 .services-intro::after {
   position: absolute;
-  top: 210px;
+  top: 340px;
   right: 0;
   bottom: 0;
   width: 1px;
