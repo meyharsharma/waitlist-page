@@ -484,15 +484,15 @@ h1 {
   background: linear-gradient(
     180deg,
     #ffffff 0,
-    #ffffff 18px,
-    #f5faff 38px,
-    #e8f2f8 60px,
-    #cadce8 82px,
-    #92aabd calc(var(--services-content-offset) - 42px),
-    #61798e calc(var(--services-content-offset) - 22px),
-    #4d667a calc(var(--services-content-offset) - 8px),
-    #465e72 var(--services-content-offset),
-    #465e72 100%
+    #fbfdff 22px,
+    #f4f9fd 48px,
+    #e9f3f9 74px,
+    #d8e8f1 102px,
+    #bed3e0 calc(var(--services-content-offset) - 58px),
+    #9fb9c9 calc(var(--services-content-offset) - 34px),
+    #7899ad calc(var(--services-content-offset) - 14px),
+    #63869a var(--services-content-offset),
+    #63869a 100%
   );
   color: rgba(255, 255, 255, 0.92);
   border-radius: 0 0 0 36px;
