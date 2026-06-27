@@ -500,7 +500,7 @@ h1 {
 .services-list {
   position: relative;
   z-index: 1;
-  padding: calc(170px + clamp(34px, 4vw, 56px)) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
+  padding: calc(250px + clamp(34px, 4vw, 56px)) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
 }
 
 .services-intro {
@@ -541,36 +541,6 @@ h1 {
   color: rgba(255, 255, 255, 0.84);
   font-size: clamp(1.35rem, 2vw, 2rem);
   line-height: 1.2;
-}
-
-.services-arrow {
-  position: relative;
-  width: 128px;
-  height: 96px;
-  margin-top: 42px;
-}
-
-.services-arrow::before,
-.services-arrow::after {
-  position: absolute;
-  content: "";
-  background: rgba(255, 255, 255, 0.82);
-  transform-origin: right center;
-}
-
-.services-arrow::before {
-  right: 0;
-  bottom: 0;
-  width: 126px;
-  height: 3px;
-}
-
-.services-arrow::after {
-  right: 0;
-  bottom: 1px;
-  width: 126px;
-  height: 3px;
-  transform: rotate(45deg);
 }
 
 .services-list {
@@ -683,21 +653,7 @@ h1 {
 
   .services-intro,
   .services-list {
-    padding: 202px 24px 32px;
-  }
-
-  .services-arrow {
-    width: 88px;
-    height: 72px;
-    margin-top: 32px;
-  }
-
-  .services-arrow::before {
-    width: 88px;
-  }
-
-  .services-arrow::after {
-    height: 88px;
+    padding: 252px 24px 32px;
   }
 
   .services-list {
