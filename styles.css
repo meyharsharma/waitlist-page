@@ -485,14 +485,14 @@ h1 {
     180deg,
     #ffffff 0,
     #ffffff 18px,
-    #f9fbfc 38px,
-    #eef2f3 60px,
-    #d5dcde 82px,
-    #aeb5b8 calc(var(--services-content-offset) - 42px),
-    #777e81 calc(var(--services-content-offset) - 22px),
-    #555a5d calc(var(--services-content-offset) - 8px),
-    #45494c var(--services-content-offset),
-    #45494c 100%
+    #f5faff 38px,
+    #e8f2f8 60px,
+    #cadce8 82px,
+    #92aabd calc(var(--services-content-offset) - 42px),
+    #61798e calc(var(--services-content-offset) - 22px),
+    #4d667a calc(var(--services-content-offset) - 8px),
+    #465e72 var(--services-content-offset),
+    #465e72 100%
   );
   color: rgba(255, 255, 255, 0.92);
   border-radius: 0 0 0 36px;
