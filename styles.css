@@ -37,18 +37,26 @@ body {
   overflow-x: hidden;
 }
 
-body::before,
-body::after {
-  position: fixed;
+.page-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 28px 30px 0;
+  overflow: hidden;
+}
+
+.page-shell::before,
+.page-shell::after {
+  position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   content: "";
   pointer-events: none;
   background-repeat: no-repeat;
   will-change: background-position, background-size, opacity;
 }
 
-body::before {
+.page-shell::before {
   background-image:
     radial-gradient(ellipse at center, rgba(0, 153, 255, 0.86) 0 14%, rgba(0, 153, 255, 0.54) 32%, transparent 68%),
     radial-gradient(ellipse at center, rgba(33, 169, 255, 0.62) 0 15%, rgba(33, 169, 255, 0.36) 34%, transparent 68%),
@@ -67,7 +75,7 @@ body::before {
   animation: blue-cloud 14s ease-in-out infinite;
 }
 
-body::after {
+.page-shell::after {
   background-image:
     radial-gradient(ellipse at center, rgba(120, 226, 216, 0.76) 0 16%, rgba(120, 226, 216, 0.46) 36%, transparent 70%),
     radial-gradient(ellipse at center, rgba(143, 239, 223, 0.6) 0 15%, rgba(143, 239, 223, 0.34) 34%, transparent 68%),
@@ -82,27 +90,6 @@ body::after {
     min(580px, 43vw) min(320px, 36vh);
   opacity: 0.55;
   animation: teal-cloud 14s ease-in-out infinite;
-}
-
-.page-shell {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  padding: 28px 30px 0;
-}
-
-.page-shell::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  height: min(330px, 34vh);
-  content: "";
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(120, 226, 216, 0.28) 0%, rgba(120, 226, 216, 0.17) 36%, transparent 72%),
-    radial-gradient(ellipse at 44% 92%, rgba(0, 153, 255, 0.2) 0%, rgba(0, 153, 255, 0.1) 42%, transparent 74%);
 }
 
 @keyframes blue-cloud {
@@ -240,8 +227,8 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
+  .page-shell::before,
+  .page-shell::after {
     animation: none;
   }
 }
@@ -501,18 +488,15 @@ h1 {
   position: absolute;
   inset: 0 0 auto;
   z-index: 0;
-  height: 230px;
+  height: 170px;
   content: "";
   pointer-events: none;
-  background:
-    radial-gradient(ellipse at 48% -14%, rgba(120, 226, 216, 0.34) 0%, rgba(120, 226, 216, 0.16) 42%, transparent 72%),
-    linear-gradient(
-      180deg,
-      rgba(238, 244, 247, 0.74) 0%,
-      rgba(160, 169, 171, 0.58) 34%,
-      rgba(77, 83, 86, 0.42) 66%,
-      rgba(37, 40, 43, 0) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 252, 255, 0.72) 30%,
+    rgba(37, 40, 43, 0) 100%
+  );
 }
 
 .services-intro,
