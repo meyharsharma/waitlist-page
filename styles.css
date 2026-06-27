@@ -472,6 +472,8 @@ h1 {
 }
 
 .services-section {
+  --services-content-offset: calc(140px + clamp(34px, 4vw, 56px));
+
   position: relative;
   z-index: 1;
   display: grid;
@@ -481,11 +483,15 @@ h1 {
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    #ffffff 0%,
-    #ffffff 3%,
-    #f8fbfc 6%,
-    #dfe4e6 10%,
-    #45494c 17%,
+    #ffffff 0,
+    #ffffff 18px,
+    #f9fbfc 38px,
+    #eef2f3 60px,
+    #d5dcde 82px,
+    #aeb5b8 calc(var(--services-content-offset) - 42px),
+    #777e81 calc(var(--services-content-offset) - 22px),
+    #555a5d calc(var(--services-content-offset) - 8px),
+    #45494c var(--services-content-offset),
     #45494c 100%
   );
   color: rgba(255, 255, 255, 0.92);
@@ -500,7 +506,7 @@ h1 {
 .services-list {
   position: relative;
   z-index: 1;
-  padding: calc(140px + clamp(34px, 4vw, 56px)) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
+  padding: var(--services-content-offset) clamp(34px, 4vw, 56px) clamp(34px, 4vw, 56px);
 }
 
 .services-intro {
@@ -641,6 +647,8 @@ h1 {
   }
 
   .services-section {
+    --services-content-offset: 144px;
+
     grid-template-columns: 1fr;
     margin-top: -24px;
     border-radius: 0 0 0 24px;
@@ -653,7 +661,7 @@ h1 {
 
   .services-intro,
   .services-list {
-    padding: 144px 24px 32px;
+    padding: var(--services-content-offset) 24px 32px;
   }
 
   .services-list {
