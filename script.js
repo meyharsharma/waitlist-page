@@ -1,5 +1,3 @@
-const signupTrigger = document.querySelector(".signup-trigger");
-const modalBackdrop = document.querySelector("[data-modal-backdrop]");
 const signupForm = document.querySelector(".signup-form");
 const nameInput = document.querySelector("#signup-name");
 const emailInput = document.querySelector("#signup-email");
@@ -10,31 +8,6 @@ const setSignupMessage = (message, type = "error") => {
   signupMessage.textContent = message;
   signupMessage.dataset.state = type;
 };
-
-const openModal = () => {
-  modalBackdrop.hidden = false;
-  setSignupMessage("", "idle");
-  nameInput.focus();
-};
-
-const closeModal = () => {
-  modalBackdrop.hidden = true;
-  signupTrigger.focus();
-};
-
-signupTrigger.addEventListener("click", openModal);
-
-modalBackdrop.addEventListener("click", (event) => {
-  if (event.target === modalBackdrop) {
-    closeModal();
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !modalBackdrop.hidden) {
-    closeModal();
-  }
-});
 
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();

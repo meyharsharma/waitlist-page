@@ -15,41 +15,72 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <a class="brand" href="/" aria-label="Rivvo home">rivvo</a>
-
+    <main class="page-shell" id="home">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Rivvo home">rivvo</a>
+        <nav class="nav-pill" aria-label="Site navigation">
+          <a href="#home" aria-current="page">Home</a>
+          <a href="#services">Solutions</a>
+          <a href="#waitlist">FAQ</a>
+        </nav>
+        <a class="header-cta" href="#waitlist">Get Started</a>
+      </header>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">
-            The Easiest Way For You to Find, Scan,<br class="desktop-break" />
-            And Track High Intent Prospects
+            The Easiest Way For You to<br />
+            Find, Scan, And Track<br />
+            High Intent Prospects
           </h1>
           <p class="subhead">
             Scan local businesses by niche, location, and opportunity. Turn
             prospect research into outreach-ready leads. All in one place.
-            <a href="#services" class="learn-more-link">Learn more.</a>
           </p>
-          <p class="waitlist-note">
-            Join the waitlist. Founding users will get priority access and
-            discounted launch pricing.
-          </p>
+          <a class="learn-more-link" href="#services">Learn More</a>
         </div>
 
-        <button
-          class="signup-trigger"
-          type="button"
-          aria-haspopup="dialog"
-          aria-controls="signup-dialog"
-        >
-          Sign up
-        </button>
-
-        <div class="laptop-wrap" aria-label="Rivvo agency command center preview">
-          <img
-            src="dashboard-img.png"
-            alt="Laptop displaying the Rivvo agency command center dashboard"
-          />
+        <div class="signal-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+
+        <section id="waitlist" class="waitlist-card" aria-label="Sign up to the waitlist">
+          <h2>Sign up to the Waitlist</h2>
+          <p>Founding users get priority access and discounted launch pricing.</p>
+          <form class="signup-form" novalidate>
+            <div class="field-group">
+              <label for="signup-name">Name *</label>
+              <input
+                id="signup-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label for="signup-email">Email *</label>
+              <input
+                id="signup-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <p class="signup-message" data-signup-message aria-live="polite"></p>
+            <button class="signup-submit" type="submit">Submit</button>
+          </form>
+        </section>
       </section>
     </main>
 
@@ -88,39 +119,6 @@
         </article>
       </div>
     </section>
-
-    <div class="modal-backdrop" data-modal-backdrop hidden>
-      <div
-        id="signup-dialog"
-        class="signup-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Join the Rivvo waitlist"
-      >
-        <form class="signup-form" novalidate>
-          <label class="sr-only" for="signup-name">Name</label>
-          <input
-            id="signup-name"
-            name="name"
-            type="text"
-            autocomplete="name"
-            placeholder="Name"
-            required
-          />
-          <label class="sr-only" for="signup-email">Email</label>
-          <input
-            id="signup-email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            placeholder="Email"
-            required
-          />
-          <p class="signup-message" data-signup-message aria-live="polite"></p>
-          <button class="signup-submit" type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
 
     <script src="script.js"></script>
   </body>
