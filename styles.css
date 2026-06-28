@@ -176,7 +176,7 @@ h1 {
   justify-content: center;
   min-width: 164px;
   min-height: 46px;
-  margin-top: clamp(18px, 2.5vh, 34px);
+  margin-top: clamp(28px, 3.8vh, 52px);
   border: 2px solid var(--ink);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.26);
@@ -208,7 +208,7 @@ h1 {
   width: 104px;
   height: 60px;
   margin-bottom: 0;
-  margin-left: 42px;
+  margin-left: 74px;
 }
 
 .signal-mark span {
@@ -268,7 +268,7 @@ h1 {
   grid-column: 1 / -1;
   justify-self: center;
   width: min(760px, 100%);
-  margin-top: clamp(8px, 2vh, 22px);
+  margin-top: clamp(24px, 3.5vh, 44px);
   padding: clamp(24px, 3vw, 34px);
   border: 1px solid rgba(255, 255, 255, 0.64);
   border-radius: 24px;
@@ -543,7 +543,7 @@ h1 {
   .learn-more-link {
     min-width: 146px;
     min-height: 44px;
-    margin-top: 42px;
+    margin-top: 54px;
   }
 
   .signal-mark {
