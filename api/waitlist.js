@@ -58,10 +58,40 @@ const getRequestPayload = async (request) => {
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+// Best-effort, per-instance rate limit. On serverless (Vercel) this only spans a
+// single warm instance, so it slows bursts rather than guaranteeing a hard cap;
+// the honeypot below is the primary bot defense.
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 6;
+const rateBuckets = new Map();
+
+const getClientIp = (request) => {
+  const forwarded = request.headers["x-forwarded-for"];
+  if (typeof forwarded === "string" && forwarded.length > 0) {
+    return forwarded.split(",")[0].trim();
+  }
+  return request.socket?.remoteAddress || "unknown";
+};
+
+const isRateLimited = (ip) => {
+  const now = Date.now();
+  const recent = (rateBuckets.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  rateBuckets.set(ip, recent);
+  return recent.length > RATE_LIMIT_MAX;
+};
+
 const handleWaitlistSignup = async (request, response) => {
   if (request.method !== "POST") {
     response.writeHead(405, { Allow: "POST" });
     response.end("Method not allowed");
+    return;
+  }
+
+  if (isRateLimited(getClientIp(request))) {
+    jsonResponse(response, 429, {
+      error: "Too many attempts. Please try again in a minute.",
+    });
     return;
   }
 
@@ -81,6 +111,13 @@ const handleWaitlistSignup = async (request, response) => {
     payload = await getRequestPayload(request);
   } catch {
     jsonResponse(response, 400, { error: "Invalid signup request." });
+    return;
+  }
+
+  // Honeypot: humans never see the "company" field, so a filled value means a bot.
+  // Return a success-shaped response so the bot can't tell it was rejected.
+  if (String(payload.company || "").trim()) {
+    jsonResponse(response, 201, { message: "You are on the waitlist." });
     return;
   }
 

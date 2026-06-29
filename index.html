@@ -101,6 +101,17 @@
                 required
               />
             </div>
+            <!-- Honeypot: hidden from people, tempting to bots. Real users leave it empty. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="signup-company">Company</label>
+              <input
+                id="signup-company"
+                name="company"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
             <p class="signup-message" data-signup-message aria-live="polite"></p>
             <button class="signup-submit" type="submit">Submit</button>
           </form>

@@ -1,6 +1,7 @@
 const signupForm = document.querySelector(".signup-form");
 const nameInput = document.querySelector("#signup-name");
 const emailInput = document.querySelector("#signup-email");
+const companyInput = document.querySelector("#signup-company");
 const signupSubmit = document.querySelector(".signup-submit");
 const signupMessage = document.querySelector("[data-signup-message]");
 
@@ -36,7 +37,7 @@ signupForm.addEventListener("submit", async (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ name, email, company: companyInput ? companyInput.value : "" }),
     });
     const result = await response.json();
 

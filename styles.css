@@ -466,6 +466,15 @@ h1 {
   border: 0;
 }
 
+/* Honeypot field: kept in the DOM for bots, removed from the human layout. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @media (max-width: 1020px) {
   .site-header {
     grid-template-columns: 1fr auto;
