@@ -58,12 +58,38 @@ const getRequestPayload = async (request) => {
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-// Best-effort, per-instance rate limit. On serverless (Vercel) this only spans a
-// single warm instance, so it slows bursts rather than guaranteeing a hard cap;
-// the honeypot below is the primary bot defense.
-const RATE_LIMIT_WINDOW_MS = 60_000;
+// --- Rate limiting -------------------------------------------------------
+// Max signups accepted per client IP per window.
 const RATE_LIMIT_MAX = 6;
+const RATE_LIMIT_WINDOW = "60 s";
+const RATE_LIMIT_WINDOW_MS = 60_000;
+
+// Durable, cross-instance limit via Upstash Redis when configured. This is the
+// only kind that actually holds across Vercel's many serverless instances.
+// Without the env vars (e.g. local dev) it transparently falls back to a
+// best-effort in-memory limiter, so nothing breaks if Upstash isn't set up.
+let upstashLimiter = null;
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  const { Ratelimit } = require("@upstash/ratelimit");
+  const { Redis } = require("@upstash/redis");
+  upstashLimiter = new Ratelimit({
+    redis: new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    }),
+    limiter: Ratelimit.slidingWindow(RATE_LIMIT_MAX, RATE_LIMIT_WINDOW),
+    prefix: "waitlist_rl",
+  });
+}
+
 const rateBuckets = new Map();
+const inMemoryRateLimited = (ip) => {
+  const now = Date.now();
+  const recent = (rateBuckets.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  rateBuckets.set(ip, recent);
+  return recent.length > RATE_LIMIT_MAX;
+};
 
 const getClientIp = (request) => {
   const forwarded = request.headers["x-forwarded-for"];
@@ -73,12 +99,17 @@ const getClientIp = (request) => {
   return request.socket?.remoteAddress || "unknown";
 };
 
-const isRateLimited = (ip) => {
-  const now = Date.now();
-  const recent = (rateBuckets.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
-  recent.push(now);
-  rateBuckets.set(ip, recent);
-  return recent.length > RATE_LIMIT_MAX;
+const isRateLimited = async (ip) => {
+  if (upstashLimiter) {
+    try {
+      const { success } = await upstashLimiter.limit(ip);
+      return !success;
+    } catch {
+      // Redis unreachable: degrade to best-effort rather than blocking real signups.
+      return inMemoryRateLimited(ip);
+    }
+  }
+  return inMemoryRateLimited(ip);
 };
 
 const handleWaitlistSignup = async (request, response) => {
@@ -88,7 +119,7 @@ const handleWaitlistSignup = async (request, response) => {
     return;
   }
 
-  if (isRateLimited(getClientIp(request))) {
+  if (await isRateLimited(getClientIp(request))) {
     jsonResponse(response, 429, {
       error: "Too many attempts. Please try again in a minute.",
     });

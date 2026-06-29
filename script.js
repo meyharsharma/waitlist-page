@@ -5,13 +5,39 @@ const companyInput = document.querySelector("#signup-company");
 const signupSubmit = document.querySelector(".signup-submit");
 const signupMessage = document.querySelector("[data-signup-message]");
 
+const JOINED_KEY = "marketdesk_waitlist_joined";
+
 const setSignupMessage = (message, type = "error") => {
   signupMessage.textContent = message;
   signupMessage.dataset.state = type;
 };
 
+// Once this browser has joined, keep the form locked so it can't resubmit on
+// reload or repeated clicks. (Client-side convenience; the server rate limit and
+// the email UNIQUE constraint are the real guards.)
+let alreadyJoined = false;
+try {
+  alreadyJoined = localStorage.getItem(JOINED_KEY) === "1";
+} catch {
+  alreadyJoined = false;
+}
+
+const lockForm = (message) => {
+  signupSubmit.disabled = true;
+  signupSubmit.textContent = "Joined ✓";
+  if (message) setSignupMessage(message, "success");
+};
+
+if (alreadyJoined) {
+  lockForm("You're already on the waitlist.");
+}
+
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  if (alreadyJoined) {
+    return;
+  }
 
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
@@ -46,12 +72,20 @@ signupForm.addEventListener("submit", async (event) => {
       return;
     }
 
+    alreadyJoined = true;
+    try {
+      localStorage.setItem(JOINED_KEY, "1");
+    } catch {
+      /* storage unavailable (private mode); the success message still shows */
+    }
     signupForm.reset();
-    setSignupMessage(result.message || "You are on the waitlist.", "success");
+    lockForm(result.message || "You are on the waitlist.");
   } catch {
     setSignupMessage("Could not reach the waitlist right now.");
   } finally {
-    signupSubmit.disabled = false;
-    signupSubmit.textContent = "Submit";
+    if (!alreadyJoined) {
+      signupSubmit.disabled = false;
+      signupSubmit.textContent = "Submit";
+    }
   }
 });
