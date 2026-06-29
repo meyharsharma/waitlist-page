@@ -1,0 +1,5 @@
+# Files that should never be deployed/served publicly.
+# server.js is local-dev only; on Vercel the /api function handles requests.
+server.js
+AGENTS.md
+.env.example

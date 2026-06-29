@@ -56,6 +56,10 @@ const getRequestPayload = async (request) => {
   return JSON.parse(body);
 };
 
+// Input limits / validation.
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254; // RFC 5321 maximum address length.
+const CONTROL_CHARS = /[\u0000-\u001f\u007f]/; // reject NUL, newlines, other control chars.
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 // --- Rate limiting -------------------------------------------------------
@@ -145,6 +149,11 @@ const handleWaitlistSignup = async (request, response) => {
     return;
   }
 
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    jsonResponse(response, 400, { error: "Invalid signup request." });
+    return;
+  }
+
   // Honeypot: humans never see the "company" field, so a filled value means a bot.
   // Return a success-shaped response so the bot can't tell it was rejected.
   if (String(payload.company || "").trim()) {
@@ -152,15 +161,22 @@ const handleWaitlistSignup = async (request, response) => {
     return;
   }
 
-  const name = String(payload.name || "").trim();
-  const email = String(payload.email || "").trim().toLowerCase();
+  const rawName = payload.name;
+  const rawEmail = payload.email;
+  const name = (typeof rawName === "string" ? rawName : "").trim();
+  const email = (typeof rawEmail === "string" ? rawEmail : "").trim().toLowerCase();
 
   if (!name || !email) {
     jsonResponse(response, 400, { error: "Please enter your name and email." });
     return;
   }
 
-  if (!isValidEmail(email)) {
+  if (name.length > MAX_NAME_LENGTH || CONTROL_CHARS.test(name)) {
+    jsonResponse(response, 400, { error: "Please enter a valid name." });
+    return;
+  }
+
+  if (email.length > MAX_EMAIL_LENGTH || !isValidEmail(email)) {
     jsonResponse(response, 400, { error: "Please enter a valid email address." });
     return;
   }

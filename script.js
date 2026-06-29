@@ -47,7 +47,13 @@ signupForm.addEventListener("submit", async (event) => {
     return;
   }
 
-  if (!emailInput.validity.valid) {
+  if (name.length > 100) {
+    setSignupMessage("Please enter a shorter name.");
+    nameInput.focus();
+    return;
+  }
+
+  if (email.length > 254 || !emailInput.validity.valid) {
     setSignupMessage("Please enter a valid email address.");
     emailInput.focus();
     return;
